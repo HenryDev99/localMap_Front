@@ -7,13 +7,18 @@ import { RootState } from '../../reducers'
 import { UserState } from '../../reducers/userReducer'
 import { useQuery } from 'react-query'
 import MainCard from '../../components/mainCard'
-import { storeInfoDTO } from '../../types/main/mainTypes'
 import { useState } from 'react'
 import Loading from '../../components/loading'
+import Spinner from "../../assets/images/spinner.gif";
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk'
 import marker from '../../assets/images/ic_map_pin.png'
+import StoreCard from '../../components/storeCard'
+import { QueryKey, UseQueryOptions, useQueries } from "react-query";
+import { getEditorProposal } from "../../apis/mainApi";
+import { mainApiVO, storeInfoDTO, editorProposalDTO } from "../../types/main/mainTypes";
 
 const SearchResult = () => {
+
   const params = useParams()
   const userState = useSelector(
     (state: RootState) => state.userReducer as UserState
@@ -41,6 +46,24 @@ const SearchResult = () => {
     'location',
     fetchAndSetSearchInfo
   )
+
+  const fetchAndSetEditorProposal = async () => {
+    const data = await getEditorProposal({
+      limit: 4,
+      offset: 0,
+    });
+    return data;
+  };
+
+  const queries: UseQueryOptions<mainApiVO, Error, mainApiVO, QueryKey>[] = [
+    {
+      queryKey: ["editor", 1],
+      queryFn: fetchAndSetEditorProposal,
+      staleTime: Infinity,
+    },
+  ];
+
+  const results = useQueries(queries);
 
   return (
     <>
@@ -107,6 +130,15 @@ const SearchResult = () => {
                   )
                 })}
               </Map>
+              <div className="editCardList">
+                {results[0].isLoading ? (
+                     <img src={Spinner} alt="로딩중" width="50%" />
+                  ) : (
+                  results[0].data?.results.map((item) => {
+                 return <StoreCard params={item as editorProposalDTO} />;
+                 })
+                )}
+              </div>
             </div>
           </div>
           <div className="pagiNationWrapper">

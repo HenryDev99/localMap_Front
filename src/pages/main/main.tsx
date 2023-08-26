@@ -18,25 +18,18 @@ import { CustomOverlayMap, Map, MapMarker } from "react-kakao-maps-sdk";
 import { useSelector } from "react-redux";
 import { RootState } from "../../reducers";
 import marker from "../../assets/images/ic_map_pin.png";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { UserState } from "../../reducers/userReducer";
-import { useNavigate } from "react-router-dom";
 
 const Main = (): JSX.Element => {
   const userState = useSelector(
     (state: RootState) => state.userReducer as UserState
   );
-  const navigate = useNavigate();
+
   const [isHover1, setHover1] = useState(false);
   const [isHover2, setHover2] = useState(false);
   const [isHover3, setHover3] = useState(false);
   const [isHover4, setHover4] = useState(false);
-
-  const [searchValue, setSearch] = useState("");
-
-  const saveSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
-  };
 
   const fetchAndSetNearStore = async () => {
     const data = await getNearLocalStore({
@@ -175,10 +168,6 @@ const Main = (): JSX.Element => {
         )}
       </div>
     );
-  };
-
-  const goSearchResult = () => {
-    navigate("/searchResult" + `/${searchValue}`);
   };
 
   return (

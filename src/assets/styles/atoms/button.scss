@@ -1,0 +1,32 @@
+.custom-btn {
+    display: flex;
+    padding: 21px 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color:white;
+    border-radius: 14px;
+    border: #ffba26;
+    background: linear-gradient(141deg, #ffba26 0%, #ff9a0e 100%);
+    box-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29),
+      0px 5px 10px 0px rgba(255, 174, 0, 0.26);
+    margin-top: 3rem;
+    cursor: pointer;
+  }
+
+  .seeMoreButton{
+    display: flex;
+    padding: 21px 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color:white;
+    font-size: 12px;
+    border-radius: 14px;
+    border: #ffba26;
+    background: linear-gradient(141deg, #ffba26 0%, #ff9a0e 100%);
+    box-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29),
+      0px 5px 10px 0px rgba(255, 174, 0, 0.26);
+    margin-top: 3rem;
+    cursor: pointer;
+  }

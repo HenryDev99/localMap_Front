@@ -1,5 +1,8 @@
 @import './common.scss';
 
+//atoms
+@import './atoms/button.scss';
+
 //components
 @import './components/header.scss';
 @import '../styles/components/mainCard.scss';
@@ -8,6 +11,8 @@
 @import '../styles/components/map.scss';
 @import '../styles/components/mainSearch.scss';
 @import '../styles/components/mainSeeMoreButton.scss';
+@import '../styles/components/storeCard.scss';
+
 //pages
 @import './pages/main.scss';
 @import './pages/login.scss';

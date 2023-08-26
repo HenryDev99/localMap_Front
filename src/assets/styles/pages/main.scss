@@ -27,55 +27,6 @@
         line-height: 120%;
         font-style: normal;
       }
-      .searchWrapper {
-        width: 70rem;
-        display: flex;
-        padding: 18px;
-        align-items: flex-start;
-        gap: 8px;
-        align-self: stretch;
-        border-radius: 5px;
-        background: #fff;
-        .search {
-          width: 100%;
-          display: flex;
-          border-radius: 8px;
-          background: #f5f5f5;
-          padding: 1.5rem;
-          img {
-            margin: auto;
-            margin-right: 1rem;
-          }
-          input {
-            width: 100%;
-            font-size: medium;
-            margin: auto;
-            border: none;
-            background: transparent;
-          }
-          input:focus {
-            outline: none !important;
-          }
-        }
-        .searchButton {
-          width: 18%;
-          border-radius: 8px;
-          background: #ff7a7a;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          cursor: pointer;
-          p {
-            color: #fff;
-            text-align: center;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 100%; /* 18px */
-          }
-        }
-      }
     }
     .rightWrapper {
       width: 51rem;
@@ -108,28 +59,6 @@
         align-items: center;
         gap: 80px;
         flex-shrink: 0;
-      }
-    }
-    .seeMoreButton {
-      display: flex;
-      padding: 21px 48px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 14px;
-      background: linear-gradient(141deg, #ffba26 0%, #ff9a0e 100%);
-      box-shadow: 0px 20px 40px 0px rgba(255, 174, 0, 0.29),
-        0px 5px 10px 0px rgba(255, 174, 0, 0.26);
-      margin-top: 3rem;
-      cursor: pointer;
-      p {
-        color: #fff;
-        text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%;
-        margin: 0px;
       }
     }
   }
