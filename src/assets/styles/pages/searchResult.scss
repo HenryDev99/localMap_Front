@@ -48,8 +48,10 @@
       grid-template-columns: repeat(2, 40rem);
     }
     .rigthWrapper {
-      width: 50rem;
-      border: 1px solid red;
+      width: 52rem;
+      border-radius: 16px;
+      border: 2px solid #f0e0bf;
+      background-color: #f6f3ec;
     }
   }
 

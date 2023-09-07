@@ -93,7 +93,7 @@ const SearchResult = () => {
                   lat: userState.coordinates.lat,
                   lng: userState.coordinates.lng
                 }} // 지도의 중심 좌표
-                style={{ width: '51rem', height: '41.3rem' }}
+                style={{border: '1px solid #f0e0bf',borderRadius: '16px' , paddingLeft: '18px', paddingTop: '10px' ,width: '50rem', height: '41.3rem' }}
                 level={3}
               >
                 {data?.results.map((item: storeInfoDTO) => {
