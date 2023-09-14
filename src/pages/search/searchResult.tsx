@@ -52,10 +52,10 @@ const SearchResult = () => {
   );
   // fetchAndSetEditorProposal 함수 수정
   const fetchAndSetEditorProposal = async () => {
-    const offset = (currentPage - 1) * postsPerPage;
+    const offset = (currentPage - 1) * e_postsPerPage + 1;
 
     const data = await getEditorProposal({
-      limit: postsPerPage,
+      limit: e_postsPerPage,
       offset: offset,
     });
 
@@ -90,7 +90,7 @@ const SearchResult = () => {
   const [postsPerPage, setPostsPerPage] = useState(6);
 
   //현재 페이지의 첫번째 게시물 인덱스번호
-  const p_offset = (currentPage - 1) * postsPerPage;
+  const [e_postsPerPage, sete_PostsPerPage] = useState(3);
 
   const currentPosts = results[1].data?.results.map((item, index) => (
     <MainCard key={index} params={item as storeInfoDTO} />
