@@ -1,0 +1,41 @@
+
+.pagiNationWrapper {
+    align-self: start;
+    display: flex;
+    margin: 10rem 0 10rem 30rem;
+    width: 30rem;
+    height: 10rem;
+    gap: 5rem;
+
+    .pageBtn {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+
+      &.selected {
+        border-radius: 50px;
+        border: 2px solid #ff792a;
+        p {
+          color: #ff792a;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 46px; /* 255.556% */
+        }
+      }
+
+      border-radius: 50px;
+      border: 2px solid #cbcbcb;
+      p {
+        color: #cbcbcb;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 46px; /* 255.556% */
+      }
+    }
+  }

@@ -1,6 +1,7 @@
 import MainCard from "../../components/mainCard";
 import MainLaggeCard from "../../components/mainLargeCard";
 import MainSearch from "../../components/mainSearch";
+import Button from "../../atoms/button";
 import MainSeeMoreButton from "../../components/mainSeeMoreButton";
 import {
   getEditorProposal,
@@ -20,6 +21,7 @@ import { RootState } from "../../reducers";
 import marker from "../../assets/images/ic_map_pin.png";
 import { useState } from "react";
 import { UserState } from "../../reducers/userReducer";
+import { useNavigate } from 'react-router-dom';
 
 const Main = (): JSX.Element => {
   const userState = useSelector(
@@ -169,6 +171,13 @@ const Main = (): JSX.Element => {
       </div>
     );
   };
+  const navigate = useNavigate()
+  const goFavList = () => {
+    navigate("/favlist");
+  };
+  const goEventList = () => {
+    navigate('/eventlist');
+  }
 
   return (
     <div className="mainWrapper">
@@ -205,7 +214,7 @@ const Main = (): JSX.Element => {
               })
             )}
           </div>
-          <MainSeeMoreButton />
+          <Button onClick={goFavList} />
         </div>
         <div className="StoreWrapper">
           <p className="mainTitle">이벤트 중인 맛집</p>
@@ -218,7 +227,7 @@ const Main = (): JSX.Element => {
               })
             )}
           </div>
-          <MainSeeMoreButton />
+          <Button onClick={goEventList}/>
         </div>
         <div className="StoreWrapper">
           <p className="mainTitle">에디터 특집</p>

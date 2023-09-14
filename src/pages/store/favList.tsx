@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import ic_menu from '../../assets/images/ic _menu_.svg'
-import ic_plus from '../../assets/images/ic_plus.svg'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../reducers'
 import { UserState } from '../../reducers/userReducer'
@@ -10,11 +9,12 @@ import Spinner from "../../assets/images/spinner.gif";
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk'
 import marker from '../../assets/images/ic_map_pin.png'
 import StoreCard from '../../components/storeCard'
+import PageNation from '../../components/pagenation'
 import { QueryKey, UseQueryOptions, useQueries } from "react-query";
 import { getNearLocalStore,  getEditorProposal } from "../../apis/mainApi";
 import { mainApiVO, storeInfoDTO, editorProposalDTO } from "../../types/main/mainTypes";
 
-const FavResult = () => {
+const FavList = () => {
 
   const params = useParams()
   const userState = useSelector(
@@ -192,19 +192,9 @@ const FavResult = () => {
               </div>
             </div>
           </div>
-          <div className="pagiNationWrapper">
-            <div className="pageBtn selected">
-              <p>1</p>
-            </div>
-            <div className="pageBtn">
-              <p>2</p>
-            </div>
-            <div className="pageBtn">
-              <p>3</p>
-            </div>
-          </div>
+          <PageNation/>
         </div>
       )
 }
 
-export default FavResult;
+export default FavList;

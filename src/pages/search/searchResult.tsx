@@ -16,6 +16,7 @@ import StoreCard from '../../components/storeCard'
 import { QueryKey, UseQueryOptions, useQueries } from "react-query";
 import { getEditorProposal } from "../../apis/mainApi";
 import { mainApiVO, storeInfoDTO, editorProposalDTO } from "../../types/main/mainTypes";
+import PageNation from '../../components/pagenation'
 
 const SearchResult = () => {
 
@@ -141,17 +142,7 @@ const SearchResult = () => {
               </div>
             </div>
           </div>
-          <div className="pagiNationWrapper">
-            <div className="pageBtn selected">
-              <p>1</p>
-            </div>
-            <div className="pageBtn">
-              <p>2</p>
-            </div>
-            <div className="pageBtn">
-              <p>3</p>
-            </div>
-          </div>
+          <PageNation/>
         </div>
       )}
     </>
